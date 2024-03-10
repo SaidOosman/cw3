@@ -1,0 +1,24 @@
+{
+    "name":"Lesson Store PWA",
+    "short_name": "Lesson Store",
+    "description": "My Lesson online store",
+    "icons": [
+        {
+            "src":"src/images/icon_app_small.png",
+            "sizes": "48x48",
+            "type":"image/png",
+            "form_factor": "wide"
+
+        },
+        {
+            "src":"src/images/icon_app.png",
+            "sizes": "512x512",
+            "type":"image/png",
+            "form_factor": "wide"
+
+        }
+    ],
+    "start_url":"index.html",
+    "display": "fullscreen",
+    "background_color": "#260bca"
+}

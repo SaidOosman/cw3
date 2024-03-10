@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" >
     
     <script src="https://unpkg.com/vue@2"></script>
-    <!-----<script src="lessons.js"></script> ----->
+    <script src="lessons.js"></script>
+    <link rel="manifest" href="lessonstore.webmanifest">
     
     <title>Lessons Mart </title>
     </head>
@@ -109,7 +110,8 @@ let onlinestore = new Vue({
     el: '#app',
     data: {
         headername: "Lessons Mart",
-        lessons: [], //lessons,
+        lessons:lessons,
+        //lessons: [], //lessons,
         submt: 
 {
         FirstName: '',
@@ -121,21 +123,23 @@ let onlinestore = new Vue({
         showProd: true,
 },
     created: function () {
-
+        if ("serviceWorker" in navigator) {
+                navigator.serviceWorker.register("service-worker.js");
+        }
 
  
         //fetch("http://localhost:3000/collections/lessons").then(
-        fetch("https://lesson-test-pipe-env.eba-pw4bjpfx.eu-west-2.elasticbeanstalk.com/collections/lessons").then(
-            function (response) {
-                response.json().then(
-                    function (json) {
-                        alert(json);
-                        console.log(json);
-                        onlinestore.lessons = json;
-                    }
-                )
-            }
-        );
+        // fetch(this.serverURL).then(
+        //     function (response) {
+        //         response.json().then(
+        //             function (json) {
+        //                 alert(json);
+        //                 console.log(json);
+        //                 onlinestore.lessons = json;
+        //             }
+        //         )
+        //     }
+        // );
 
     },
     methods: {
